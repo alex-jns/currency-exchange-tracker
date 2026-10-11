@@ -82,6 +82,13 @@ because the latest available rate may have an earlier publication date.
 | `database.py`   | Database models, storage, and currency-code lookup      |
 | `graph.py`      | Historical data requests, date validation, and plotting |
 
+## Issues
+
+- Lookup date is based on the local machine and may not necessarily be the most up-to-date information when close to a date change.
+- Requesting a historical graph is not cached and each lookup requires an API call and an internet connection.
+- May not add new currencies if the API updates. Requires deleting the database.
+- Does not fall back to rates in an older date if API request fails due to bad status, timeout, etc.
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
